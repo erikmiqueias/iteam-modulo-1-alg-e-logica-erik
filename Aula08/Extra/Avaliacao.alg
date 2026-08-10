@@ -1,0 +1,127 @@
+Algoritmo "RelatorioProdutividade"
+
+// Aluno(a): Erik Miqueias Pereira Costa
+// Data: 10/08/2026
+
+// Como usar este arquivo:
+// A parte de baixo (os vetores com os dados e as mensagens
+// finais) ja esta pronta. O que falta preencher sao as PARTES
+// marcadas abaixo. Cada parte pede uma coisa so, na ordem que
+// voce deve escrever. Leia o comentario, escreva o codigo logo
+// embaixo dele, e va testando aos poucos no VisuAlg.
+
+// Objetivo:
+// Ler as horas trabalhadas de uma equipe num dia, calcular a
+// hora extra de cada funcionario, classificar a produtividade
+// de cada um e no final mostrar a media de horas da equipe.
+
+Var
+  nomes : vetor[0..4] de caractere
+  horas : vetor[0..4] de inteiro
+  i : inteiro
+  horaExtra: inteiro
+  produtividade : caractere
+  somaHoras : inteiro
+  media : real
+
+Inicio
+
+  // Dados de entrada
+  // Cada funcionario ocupa a MESMA posicao nos dois vetores.
+  // nomes[0] e horas[0] sao da mesma pessoa (Ana), nomes[1] e
+  // horas[1] da proxima pessoa (Bruno), e assim por diante.
+  // horas guarda as horas trabalhadas por cada funcionario
+  // num dia.
+  nomes[0] <- "Ana"
+  nomes[1] <- "Bruno"
+  nomes[2] <- "Carla"
+  nomes[3] <- "Diego"
+  nomes[4] <- "Elisa"
+
+  horas[0] <- 9
+  horas[1] <- 6
+  horas[2] <- 11
+  horas[3] <- 8
+  horas[4] <- 7
+
+
+  // Parte 1
+  // Zere a variavel somaHoras aqui, porque no inicio ninguem
+  // foi contado ainda.
+  somaHoras <- 0
+
+
+  // Parte 2
+  // Faca um laco PARA que percorra as posicoes do vetor, de 0
+  // ate 4 (sao 5 funcionarios). Dentro desse laco, usando a
+  // variavel i como posicao atual, faca as quatro coisas
+  // abaixo, em ordem, para CADA funcionario:
+
+  // Parte 2a
+  // Calcule quantas horas extras esse funcionario fez. A
+  // conta e horas[i] menos 8 (a jornada de trabalho). Se
+  // der um numero negativo (a pessoa trabalhou menos que
+  // a jornada), considere que a hora extra foi 0, porque
+  // nao existe hora extra negativa. Guarde o resultado na
+  // variavel horaExtra.
+
+
+  // Parte 2b
+  // Decida a produtividade desse funcionario usando SE,
+  // SENAO SE e SENAO, comparando horas[i] com 8, e guarde
+  // o resultado na variavel produtividade:
+  //   se horas[i] for menor que 8, produtividade vira
+  //   "Abaixo do esperado"
+  //   se horas[i] for igual a 8, produtividade vira
+  //   "Dentro do esperado"
+  //   se horas[i] for maior que 8, produtividade vira
+  //   "Acima do esperado"
+
+  // Parte 2c
+  // Some horas[i] na variavel somaHoras. E assim que a
+  // soma total da equipe vai sendo montada, funcionario
+  // por funcionario, a cada volta do laco.
+
+  // Parte 2d
+  // Exiba uma linha de relatorio para esse funcionario,
+  // juntando o nome, as horas trabalhadas, a hora extra e
+  // a produtividade que voce calculou acima. Por exemplo:
+  // Ana - 9h trabalhadas - 1h extra - Acima do esperado
+
+  para i de 0 ate 4 faca
+    horaExtra <- horas[i] - 8 // realiza o calculo da hora extra
+
+    se horaExtra < 0 entao // se a hora extra for menor que 0 então reatribui hora extra sendo 0
+      horaExtra <- 0
+    fimse
+
+    se horas[i] < 8 entao // se horas for menor que 8 então imprime "Abaixo do esperado!"
+      produtividade <- "Abaixo do esperado!"
+    senao
+      se horas[i] = 8 entao // se horas for igual a 8 então imprime "Dentro do esperado!"
+        produtividade <- "Dentro do esperado!"
+      senao // senão significa que é maior então imprime "Acima do esperado!" 
+        produtividade <- "Acima do esperado!"
+      fimse
+    fimse
+
+    somaHoras <- somaHoras + horas[i] // após os se's acumula a a hora do funcionário a somaHoras
+
+    escreval(nomes[i], " - ", horas[i], "h trabalhadas", " - ", horaExtra, "h extra", " - ", produtividade) // para cada funcionário imprime o nome, horas trabalhadas, hora extra e a produtividade
+  fimpara
+
+  // Parte 3
+  // Depois que o laco terminar de passar por todos os
+  // funcionarios, calcule a media de horas da equipe. A conta
+  // e somaHoras dividido por 5.
+
+  media <- somaHoras / 5
+
+  escreval("")
+  escreval("Resumo da equipe")
+  // Parte 4
+  // Exiba a media de horas da equipe que voce calculou na
+  // Parte 3.
+  escreval("Média da equipe: ", media)
+
+fimalgoritmo
