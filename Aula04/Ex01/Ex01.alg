@@ -8,11 +8,11 @@ Var
 Inicio
 
   escreval("Digite sua idade para verificar se foi aprovado ou reprovado no empréstimo: ")
-  leia(idade)
+  leia(idade) // lê a idade do usuário
 
-  se idade >= 18 entao
+  se idade >= 18 entao // se ele for maior de idade então ele tem o empréstimo aprovado
     escreva("EMPRÉSTIMO APROVADO!")
-  senao
+  senao // senão então o empréstimo dele é reprovado
     escreva("EMPRÉSTIMO REPROVADO!")
   fimse
 fimalgoritmo
