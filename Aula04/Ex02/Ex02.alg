@@ -8,11 +8,11 @@ Var
 Inicio
 
   escreval("Digite a quantidade de estoque: ")
-  leia(qtdEstoque)
+  leia(qtdEstoque) // lê a quantidade no estoque
 
-  se qtdEstoque <= 10 entao
+  se qtdEstoque <= 10 entao // se a quantidade no estoque for menor ou igual a 10, precisa de reposição
     escreva("Reposição necessária!")
-  senao
+  senao // senão o estoque está suficiente
     escreva("Estoque suficiente")
   fimse
   
