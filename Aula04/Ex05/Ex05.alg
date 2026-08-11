@@ -8,11 +8,11 @@ Var
 Inicio
 
   escreval("Digite a nota do candidato: ")
-  leia(nota)
+  leia(nota) // lê a nota do candidato
 
-  se nota >= 70 entao
+  se nota >= 70 entao // se a nota for maior ou igual a 70 está aprovado 
     escreva("Candidato aprovado!")
-  senao
+  senao // senão está reprovado
     escreva("Candidato reprovado!")
   fimse
 fimalgoritmo
